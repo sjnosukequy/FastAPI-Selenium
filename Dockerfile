@@ -9,7 +9,9 @@ RUN apt-get install python3 -y
 
 RUN echo $(python3 -m site --user-base)
 
-RUN apt update && apt install pipx && pipx ensurepath
+RUN python3 -m pip install --user pipx
+
+RUN python3 -m pipx ensurepath
 
 COPY requirements.txt  .
 
